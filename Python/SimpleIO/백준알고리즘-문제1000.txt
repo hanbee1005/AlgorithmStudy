@@ -1,0 +1,20 @@
+[Python3]
+num1, num2 = map(int, input().split())
+print(num1 + num2)
+
+[JAVA]
+import java.io.*;
+
+class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] nums = br.readLine().split(" ");
+        System.out.println(Integer.parseInt(nums[0]) + Integer.parseInt(nums[1]));
+    }
+}
+
+[Swift]
+import Foundation
+
+let nums = readLine()!.components(separatedBy: " ").map{ Int($0)! }
+print(nums[0] + nums[1])

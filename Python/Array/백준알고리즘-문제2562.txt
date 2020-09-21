@@ -1,0 +1,8 @@
+nums = []
+
+for i in range(1, 10):
+    nums.append({'index': i, 'num': int(input())})
+    
+sortedNums = sorted(nums, key=(lambda x: x['num']))
+print(sortedNums[-1]['num'])
+print(sortedNums[-1]['index'])
