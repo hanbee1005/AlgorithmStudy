@@ -8,6 +8,8 @@ Java, Python, Swift 알고리즘 공부
 
 - Queue
   - BJAlgo_10845(큐): 정수를 저장하는 큐를 구현하고 6가지 명령에 맞는 동작 구현하기
+  - BJAlgo_1158(요세푸스 문제): N, K가 주어지면 요세푸스 순열 구하기 (print 시 format 사용)
+  - BJAlgo_2164(카드2): N이 주어졌을 때 마지막으로 남는 카드 구하기 (deque 라이브러리 사용)
 
 
 ### Python
@@ -20,6 +22,8 @@ Java, Python, Swift 알고리즘 공부
   
 - Queue
   - BJAlgo_10845(큐): 정수를 저장하는 큐를 구현하고 6가지 명령에 맞는 동작 구현하기
+  - BJAlgo_1158(요세푸스 문제): N, K가 주어지면 요세푸스 순열 구하기 (print 시 format 사용)
+  - BJAlgo_2164(카드2): N이 주어졌을 때 마지막으로 남는 카드 구하기 (deque 라이브러리 사용)
   
 
 ### Swift
