@@ -39,5 +39,7 @@ Java, Python, Swift 알고리즘 공부
   - BJAlgo_4949(균형잡힌 세상): 위와 같은데 괄호 종류 추가
   - BJAlgo_1874(스택 수열): 주어진 수열을 스택을 통해 구현할 수 있는지, 있다면 어떤 순서로 push, pop 해야하는지 구하기
   
+- Hash Table
+  - BJAlgo_15829(Hashing): 문제에서 주어진 해시함수와 입력으로 주어진 문자열을 사용해 계산한 해시 값을 정수로 출력 (modular 연산 이해)
 
 ### Swift
