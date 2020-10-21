@@ -197,3 +197,17 @@ Node와 Branch를 이용해서, 사이클을 이루지 않도록 구성한 데�
 ### Sequential Search
 
 ### Graph
+
+### BFS/DFS
+- 너비 우선 탐색(Breadth First Search): 정점들과 같은 레벨에 있는 노드들(형제 노드들)을 먼저 탐색하는 방식
+- 깊이 우선 탐색(Depth First Search): 정점의 자식들을 먼저 탐색하는 방식
+
+- 구현 특징
+  - BFS 는 2개의 Queue 를 사용 (visited, need_visit 2개의 리스트로 구현 가능)
+  - DFS 는 1개의 Queue 와 1개의 Stack 을 사용 (visited - 큐, need_visit - 스택 2개의 리스트로 구현 가능)
+
+- 시간 복잡도
+  - O(V+E) (V: 정점 수, E: 간선 수)
+  
+- 풀이한 문제
+  - python: 1260 (DFS와 BFS), 2606 (바이러스)
