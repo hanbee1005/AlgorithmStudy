@@ -1,6 +1,7 @@
 # AlgorithmStudy
 Java, Python 알고리즘 공부
 - 문제는 백준 알고리즘(Baekjoon Online Judge) 문제를 주로 풀이
+- 풀이 블로그: https://developerbee.tistory.com/124
 
 ### Array
 데이터를 나열하고, 각 데이터를 인덱스에 대응하도록 구성한 데이터 구조
