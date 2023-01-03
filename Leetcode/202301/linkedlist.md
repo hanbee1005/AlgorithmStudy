@@ -21,3 +21,8 @@ ListNode인 head가 주어졌을 때 Cycle의 시작인 노드를 찾아 반환�
 		- 시간 복잡도 : O(N)
 		- 공간 복잡도 : O(1)
 <img src="../images/202301_linked_list_cycle_ii_01.jpg" alt="linked_list_cycle_ii" width="500"/>
+
+### 83. Remove Duplicates from Sorted List
+ListNode인 head가 주어졌을 때 중복된 val가 제거된 연결 리스트를 반환하는 문제입니다. 
+[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202301/RemoveDuplicatesFromSortedList_83.java)
+- 정렬된 리스트이기 때문에 앞뒤 노드의 값만 비교하여 값이 같으면 현재 노드의 next 를 다음 노드의 next로 변경하여 중복된 노드와의 연결을 끊을 수 있도록 하였습니다.
