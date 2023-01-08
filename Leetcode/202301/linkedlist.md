@@ -30,7 +30,9 @@ ListNode인 head가 주어졌을 때 중복된 val가 제거된 연결 리스트
 ### 82. Remove Duplicates from Sorted List II
 ListNode인 head가 주어졌을 때 중복된 val가 모두 제거된 연결 리스트를 반환하는 문제입니다. 
 [문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202301/RemoveDuplicatesFromSortedListII_82.java)
-- 풀이...
+- 중복된 모든 노드를 제거해야 하기 때문에 현재 비교 대상과 그 앞 노드를 저장할 수 있도록 하였습니다.
+- 현재 노드와 다음 노드의 값이 같은 경우 현재 노드만 다음 노드로 이동할 수 있게 하고
+- 현재 노드와 다음 노드가 같지 않다면 현재 노드가 이전 노드의 바로 다음이 맞는지 확인해 맞다면 이전 노드를 현재 노드로, 아니라면 이전 노드는 유지한채로 이전 노드의 다음 노드를 현재 노드의 다음 노드로 변경하였습니다.
 
 ### 2. Add Two Numbers
 ListNode 2개가 주어졌을 때 각 node들을 더하는 문제입니다.
