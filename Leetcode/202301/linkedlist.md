@@ -32,3 +32,12 @@ ListNode인 head가 주어졌을 때 중복된 val가 모두 제거된 연결 �
 [문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202301/RemoveDuplicatesFromSortedListII_82.java)
 - 풀이...
 
+### 2. Add Two Numbers
+ListNode 2개가 주어졌을 때 각 node들을 더하는 문제입니다.
+[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202301/AddTwoNumbers_2.java)
+- 노드 l1 와 l2의 값을 더한 뒤 10으로 나눈 나머지 값을 가지고 ListNode를 만들어 다음으로 연결해주고
+- 노드 l1 와 l2의 값을 더해서 10으로 나눈 몫은 별도의 값으로 가지고 있습니다.
+- 다음 노드로 넘어가서 l1과 l2의 값을 더한 뒤 앞에서 넘어온 몫을 더하고 다시 10으로 나눠 나머지를 구해 ListNode를 만들어 다음으로 연결하는 방식으로 구현하였습니다.
+- 하나의 노드가 먼저 끝나는 경우 (next == null) 남은 노드를 가지고 나머지를 새 노드로 연결하고 몫은 다음 노드 값과 더할 수 있도록 하여 계속 이어 나갔습니다.
+- 노드들은 모두 끝이 났지만 앞에서 넘어온 몫이 남은 경우 이 값을 가지고 새 노드를 만들어 마지막에 연결해주었습니다.
+
