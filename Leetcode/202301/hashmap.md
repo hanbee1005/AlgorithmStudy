@@ -20,3 +20,10 @@ String 배열이 주어지는 경우 문자열을 이루는 char가 모두 같�
 - key에 해당하는 리스트에 원래 문자열을 저장합니다.
 - 최종적으로 Map 저장된 값들을 리스트로 만들어 반환합니다.
 - 문자열의 각 문자를 돌면서 확인할 필요없이 문자를 정렬하여 key로 사용함으로써 Map을 사용해 문제를 해결할 수 있었습니다.
+
+### 349. Intersection of Two Arrays
+두 정수 배열이 주어졌을 때 교집합인 수를 구하는 문제입니다.
+[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202301/IntersectionOfTwoArrays_349.java)
+- 먼저 nums1 배열의 각 수를 key로 하고 값은 false로 하여 Map에 저장합니다.
+- 이후 nums2 배열을 돌면서 Map이 해당 수를 key로 가지고 있다면 값을 true로 변경합니다.
+- 최종적으로 Map에서 값이 true인 key만 찾아서 배열로 반환합니다.
