@@ -33,4 +33,11 @@ String 배열이 주어지는 경우 문자열을 이루는 char가 모두 같�
 [문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202301/UniqueEmailAddresses_929.java)
 - 이메일 목록을 순회하면서 유효성 검사를 하고(local name에 해당하는 부분에서 .을 제거하고 첫번째 등장하는 + 뒤는 무시하는 작업)
 - 해당 이메일을 key로 하여 Map에 해당 key가 없으면 저장하고 있는 경우는 무시합니다.
-- Set에 저장하고 Set의 size를 반환해도 됬을 것 같다는 생각듭니다.
+- Set에 저장하고 Set의 size를 반환해도 됐을 것 같다는 생각듭니다.
+
+### 387. First Unique Character in a String
+문자열이 주어질 경우 문자열을 이루는 문자 중 중복이 없는 가장 빠른 문자의 인덱스를 구하는 문제입니다.
+[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202301/FirstUniqueCharacterInAString_387.java)
+- 문자열을 순회하면서 각 문자가 Map에 포함되어 있는지 확인하고 Map의 key로 존재하는 경우 값을 증가시켰습니다.
+- 최종적으로 Map을 돌면서 값이 0인(한번 나온 경우 0으로 설정하였습니다.) key를 구하였고 이 key가 '0'인 경우 중복이 없는 문자가 없는 것으로 간주하여 -1, key가 일반 알파벳인 경우 문자열에서 해당 문자의 인덱스를 구해 반환하도록 하였습니다.
+- 반복되지 않는 문자가 여러개 나올 수 있기 때문에 Map에 저장하는 순서가 중요해서 ```LinkedHashMap```을 사용하였습니다.
