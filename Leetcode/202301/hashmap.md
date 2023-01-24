@@ -27,3 +27,10 @@ String 배열이 주어지는 경우 문자열을 이루는 char가 모두 같�
 - 먼저 nums1 배열의 각 수를 key로 하고 값은 false로 하여 Map에 저장합니다.
 - 이후 nums2 배열을 돌면서 Map이 해당 수를 key로 가지고 있다면 값을 true로 변경합니다.
 - 최종적으로 Map에서 값이 true인 key만 찾아서 배열로 반환합니다.
+
+### 929. Unique Email Addresses
+이메일 문자열 배열이 주어지는 경우 중복을 제거한 유효한 이메일 개수를 구하는 문제입니다.
+[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202301/UniqueEmailAddresses_929.java)
+- 이메일 목록을 순회하면서 유효성 검사를 하고(local name에 해당하는 부분에서 .을 제거하고 첫번째 등장하는 + 뒤는 무시하는 작업)
+- 해당 이메일을 key로 하여 Map에 해당 key가 없으면 저장하고 있는 경우는 무시합니다.
+- Set에 저장하고 Set의 size를 반환해도 됬을 것 같다는 생각듭니다.
