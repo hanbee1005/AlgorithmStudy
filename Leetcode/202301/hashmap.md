@@ -46,4 +46,11 @@ String 배열이 주어지는 경우 문자열을 이루는 char가 모두 같�
 배열이 주어졌을 때 subarray의 합이 K와 같은 subarray 수를 구하는 문제입니다.
 [문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202301/SubarraySumEqualsK_560.java)
 - 먼저 배열을 차례로 돌면서 하나씩 확인하는 방법을 사용하였지만 시간 복잡도가 O(n^3)이 나올정도로 좋지 않아서 다음과 같이 hash map을 사용하여 해결하였습니다.
-- 
+- 두 인덱스까지의 누적합(0부터 현재 인덱스까지 합)이 같으면 두 인덱스 사이에 있는 요소의 합은 0입니다.
+- 이 생각을 더 확장하면 두 인덱스(i, j)까지의 누적합의 차가 k이면 두 인덱스 사이에 있는 요소의 합은 k라는 의미입니다. ```sum[i] - sum[j] = k```
+- 이러한 생각을 바탕으로 모든 인덱스의 누적 합과 그 합이 나온 갯수를 hashmap을 사용해 저장할 수 있습니다.
+- nums 배열을 순회하면서 누적합을 먼저 구합니다. ```sum += nums[i]```
+- 누적합을 key로 하여 hashmap에 저장하고 같은 key가 있는 경우 갯수를 하나 증가시킵니다. ```map.put(sum, map.getOrDefault(sum, 0) + 1)```
+- 또한, 모든 누적합에 대하여 합이 k인 subarray가 등장한 횟수를 저장하고 있기 때문에 (sum - k)가 등장한 횟수를 알고 있습니다.
+- 이를 확인하고 해당 횟수를 count에 그대로 더해줍니다. ```count += map.get(sum - k)``` 
+- 최종적으로 count를 반환합니다.
