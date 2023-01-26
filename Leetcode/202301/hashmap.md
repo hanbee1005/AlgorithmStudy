@@ -41,3 +41,9 @@ String 배열이 주어지는 경우 문자열을 이루는 char가 모두 같�
 - 문자열을 순회하면서 각 문자가 Map에 포함되어 있는지 확인하고 Map의 key로 존재하는 경우 값을 증가시켰습니다.
 - 최종적으로 Map을 돌면서 값이 0인(한번 나온 경우 0으로 설정하였습니다.) key를 구하였고 이 key가 '0'인 경우 중복이 없는 문자가 없는 것으로 간주하여 -1, key가 일반 알파벳인 경우 문자열에서 해당 문자의 인덱스를 구해 반환하도록 하였습니다.
 - 반복되지 않는 문자가 여러개 나올 수 있기 때문에 Map에 저장하는 순서가 중요해서 ```LinkedHashMap```을 사용하였습니다.
+
+### 560. Subarray Sum Equals K
+배열이 주어졌을 때 subarray의 합이 K와 같은 subarray 수를 구하는 문제입니다.
+[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202301/SubarraySumEqualsK_560.java)
+- 먼저 배열을 차례로 돌면서 하나씩 확인하는 방법을 사용하였지만 시간 복잡도가 O(n^3)이 나올정도로 좋지 않아서 다음과 같이 hash map을 사용하여 해결하였습니다.
+- 
