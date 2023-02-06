@@ -1,22 +1,11 @@
 # Graph, BFS, DFS
 
-### 104. Maximum Depth of Binary Tree
-트리를 구성하는 루트 노드가 주어졌을 때 트리의 깊이(depth)를 구하는 문제입니다.
-[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/MaximumDepthOfBinaryTree_104.java)
-- 최대 깊이를 구하는 문제이므로 dfs 를 사용합니다.
-- 현재 노드와 현재 depth를 파라미터로 받는 재귀함수를 생성합니다.
-- 노드가 null 인 경우 바로 리턴합니다.
-- 그렇지 않다면 지금까지 depth(=answer)가 현재 depth보다 작은 경우 answer = depth 값을 넣습니다.
-- 그리고 왼쪽 노드가 있는 경우 재귀함수를 호출하는데 이때 왼쪽 노드와 depth+1을 전달합니다.
-- 마찬가지로 오른쪽도 확인을 합니다.
-- 재귀함수를 모두 확인하고 최종적으로 answer를 반환합니다.
-
-### 111. Minimum Depth of Binary Tree
-트리를 구성하는 루트 노드가 주어졌을 때 루트로부터 가장 가까운 leaf 노드의 depth를 구하는 문제입니다.
-[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/MinimumDepthOfBinaryTree_111.java)
-- 깊이를 구하는 문제이므로 dfs 를 사용합니다.
-- 현재 노드와 현재 depth를 파라미터로 받는 재귀함수를 생성합니다.
-- 노드가 null 인 경우 최종 answer 값을 0으로 정하고 리턴합니다.
-- 현재 노드가 leaf 노드인지 확인하고 leaf 노드인 경우 현재 depth가 최종 answer보다 작은 경우 answer = depth 값을 넣습니다.
-- 그렇지 않다면 다음 노드가 있는지 확인하고 재귀함수를 호출할 때 depth+1 을 전달합니다.
-- 재귀함수를 모두 확인하고 최종적으로 answer를 반환합니다.
+### 200. Number of Islands
+배열이 주어졌을 때 땅(1), 물(0)을 구분하여 섬(사방이 0으로 둘러쌓인 1의 집합)의 개수를 구하는 문제입니다.
+[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/NumberOfIslands_200.java)
+- DFS 를 사용하여 문제를 풀었습니다.
+- 우선 주어진 배열을 모두 돌면서 탐색을 시작해야 하는 즉, **현재 값이 1이면서 아직 방문하지 않은 경우**를 찾습니다.
+- 이후 이 위치를 방문한 것으로 처리(```visited[x][y] = true```)하고 주변 상,하,좌,우 4개의 지점(```{{-1, 0}, {0, -1}, {1, 0}, {0, 1}}```)을 확인하여
+- **이동할 수 있으면서 해당 위치의 값이 1이고 아직 방문하지 않은 경우** 다시 재귀함수를 호출합니다.
+- 이 과정을 마치면 연관된 1 집합을 한번 다 찾은 것으로 섬 하나를 발견한 것이므로 count를 증가시킵니다.
+- 이후 모든 지점에 대해 확인을 하고 난 뒤 count를 반환하는 방식으로 구현하였습니다.
