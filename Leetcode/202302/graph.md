@@ -24,3 +24,11 @@
 ### 127. Word Lodder
 가장 적은 단어 수를 사용하여 시작 단어부터 끝 단어로 변할 수 있는 단어의 수를 구하는 문제입니다. 
 [문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/WordLadder_127.java)
+- 가장 빠르게 endWord에 도달할 수 있는 방법을 찾는 것이기 때문에 **최단거리문제**로 볼 수 있고 그래서 BFS를 사용하여 해결하였습니다.
+- 먼저 해당 위치를 방문한 이력이 있는지 저장할 visited 배열을 만들고 BFS 순으로 실행할 Queue를 생성합니다.
+- 이 Queue가 빌 때까지 반복하게 되는데 그 안에서 현재 depth에 있는 노드들을 다 확인하고 나서 다음 depth로 넘어가야 하기 때문에 현재 depth에 있는 노드의 수와 같은 Queue의 사이즈만큼 반복합니다.
+- 이때 Queue에서 단어를 하나 뽑아서 이 단어가 endWord와 같다면 지금까지 count를 반환하고 종료합니다.
+- 같지 않다면 wordList 처음부터 끝까지 반복하면서 다음 이동할 수 있는 단어를 찾은 뒤, 방문한 적이 없고 현재 단어와 한글자 차이가 난다면 방문한 것으로 하고 Queue에 데이터를 저장합니다.
+- 이후 다시 Queue에 값이 존재하는지 확인하기 전에 count를 증가시켜 다음 depth로 이동했음을 나타냅니다.
+- Queue를 모두 확인할 때까지 endWord와 일치하는 단어를 찾지 못한 경우 0을 반환합니다.
+- [참고](https://neo82.tistory.com/48)
