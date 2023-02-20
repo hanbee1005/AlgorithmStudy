@@ -24,4 +24,9 @@
 ### 617. Merge Two Binary Trees
 두 개의 TreeNode가 주어졌을 때 각 자리 수를 합친 새로운 TreeNode를 반환하는 문제입니다.
 [문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/MergeTwoBinaryTrees_617.java)
-- 풇이 추가...
+- 주어진 두 개의 TreeNode가 모두 null인 경우는 null을 반환하고
+- 둘 중 하나의 TreeNode가 null이라면 null이 아닌 TreeNode를 반환합니다.
+- 둘 다 null이 아닌 경우에는 먼저 각각의 왼쪽 노드를 확인하여 하나라도 null이 아니면 재귀함수에 각각의 왼쪽 노드를 전달하고 여기서 나온 반환 값을 왼쪽 노드로 저장합니다.
+- 다음으로 각각의 오른쪽 노드를 확인하여 하나라도 null이 아니면 재귀함수에 각각의 오른쪽 노드를 전달하고 여기서 나온 반환 값을 오른쪽 노드로 저장합니다.
+- 최종적으로 새로운 TreeNode를 생성하는데 현재 주어진 두 노드의 값을 더해서 현재 값으로 하고 위에서 구한 왼쪽 노드, 오른쪽 노드를 각각 세팅해줍니다.
+- 작은 트리들을 먼저 생성하고 그 트리들을 합쳐 다시 큰 트리를 생성하는 방식입니다.
