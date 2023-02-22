@@ -43,3 +43,8 @@
 ### 112. Path Sum
 트리 노드와 targetSum이 주어질 때 트리의 루트부터 노드까지의 합이 targetSum과 같은 경우가 있는지 확인하는 문제입니다.
 [문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/PathSum_112)
+- 먼저 주어진 트리 노드가 null 인 경우 false 를 리턴합니다.
+- 현재 노드가 leaf 노드이면서 targetSum 에서 현재 노드의 값을 빼서 0이면 true 를 리턴합니다.
+- 그렇지 않은 경우 왼쪽 노드가 있다면 왼쪽 노드를 확인해서 true 를 반환하는지 확인합니다. 이때 재귀함수로 넘기는 targetSum은 기존 targetSum에서 현재 노드의 값을 뺀 값입니다.
+- 왼쪽 노드에서 true 가 반환되지 않은 경우 오른쪽 노드를 같은 방식으로 확인합니다.
+- 이후 양쪽을 확인한 결과를 반환합니다.
