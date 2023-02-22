@@ -33,7 +33,7 @@
 
 ### 108. Convert Sorted Array to Binary Search Tree
 정렬된 배열이 주어졌을 때 각 서브트리의 깊이가 2이상 차이나지 않는 height-balanced 트리를 생성하는 문제입니다.
-[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/ConvertSortedArrayToBinarySearchTree_108)
+[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/ConvertSortedArrayToBinarySearchTree_108.java)
 - 정렬된 배열에서 중간 값을 가지고 먼저 새 TreeNode를 생성합니다.
 - 이후 배열에서 중간 기준으로 왼쪽에 값들이 있다면 이 배열을 왼쪽만 다시 재귀 함수로 전달하고 그 반환 값을 새로 생성한 TreeNode의 왼쪽 노드로 저장합니다.
 - 마찬가지로 배열에서 중간 기준으로 오른쪽에 값들이 있다면 이 배열을 오른쪽만 다시 재귀 함수로 전달하고 그 반환 값을 새로 생성한 TreeNode의 오른쪽 노드로 저장합니다.
@@ -42,9 +42,18 @@
 
 ### 112. Path Sum
 트리 노드와 targetSum이 주어질 때 트리의 루트부터 노드까지의 합이 targetSum과 같은 경우가 있는지 확인하는 문제입니다.
-[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/PathSum_112)
+[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/PathSum_112.java)
 - 먼저 주어진 트리 노드가 null 인 경우 false 를 리턴합니다.
 - 현재 노드가 leaf 노드이면서 targetSum 에서 현재 노드의 값을 빼서 0이면 true 를 리턴합니다.
 - 그렇지 않은 경우 왼쪽 노드가 있다면 왼쪽 노드를 확인해서 true 를 반환하는지 확인합니다. 이때 재귀함수로 넘기는 targetSum은 기존 targetSum에서 현재 노드의 값을 뺀 값입니다.
 - 왼쪽 노드에서 true 가 반환되지 않은 경우 오른쪽 노드를 같은 방식으로 확인합니다.
 - 이후 양쪽을 확인한 결과를 반환합니다.
+
+### 102. Binary Tree Level Order Traversal
+트리 노드가 주어지는 경우 각 level 별로 값을 ```List<List<Integer>>``` 형태로 반환하는 문제입니다.
+[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/BinaryTreeLevelOrderTraversal_102.java)
+- 전역 변수로 반환할 리스트를 선언합니다.
+- 먼저 depth 별 노드를 확인할 dfs 라는 메서드를 만들고 현재 List 의 크기가 현재 depth 보다 작거나 같으면 새로 List 를 생성해서 값을 추가하고
+- 이미 현재 depth 의 List 가 있는 경우는 해당 List 안에 현재 노드의 값을 추가합니다.
+- 이후 왼쪽, 오른쪽 노드에 대해서도 같은 재귀함수를 호출하는데 depth 는 한단계 증가시킵니다.
+- 결과적으로 전역 변수로 선언한 리스트를 반환하도록 합니다.
