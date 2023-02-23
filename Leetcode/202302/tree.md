@@ -57,3 +57,8 @@
 - 이미 현재 depth 의 List 가 있는 경우는 해당 List 안에 현재 노드의 값을 추가합니다.
 - 이후 왼쪽, 오른쪽 노드에 대해서도 같은 재귀함수를 호출하는데 depth 는 한단계 증가시킵니다.
 - 결과적으로 전역 변수로 선언한 리스트를 반환하도록 합니다.
+
+### 102. Binary Tree ZigZag Level Order Traversal
+트리 노드가 주어지는 경우 각 level 별로 값을 ```List<List<Integer>>``` 형태로 반환하는 문제입니다.
+[문제풀이코드](https://github.com/hanbee1005/AlgorithmStudy/blob/master/Leetcode/202302/BinaryTreeZigzagLevelOrderTraversal_103.java)
+- 102번과 동일하지만 List에 값을 넣을 때 index가 짝수인 경우에는 List의 마지막에 값을 넣고 홀수인 경우에는 가장 앞으로 넣도록 하여 구현하였습니다.
