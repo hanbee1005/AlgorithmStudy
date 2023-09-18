@@ -8,6 +8,10 @@ import java.util.Queue;
  * Top Coder BinaryFlips SRM443 Div 1 Level 2
  */
 public class TopCoderBinaryFlips {
+    private static int[] array;
+    private static int k;
+    private static Queue<Integer> q;
+
     public static void main(String[] args) {
         System.out.println(minimalMoves(3, 0, 3));
         System.out.println(minimalMoves(4, 0, 3));
@@ -22,28 +26,34 @@ public class TopCoderBinaryFlips {
         if (A == 0) return 0;  // 움직일 필요가 없는 경우
         if (A + B < K) return -1;  // 뒤집을 수 없는 경우
 
-        int[] array = new int[A + B + 1];
+        array = new int[A + B + 1];
         Arrays.fill(array, -1);
 
-        Queue<Integer> q = new LinkedList<>();
+        k = K;
+
+        q = new LinkedList<>();
         q.add(A);
         array[A] = 0;
 
         while (!q.isEmpty()) {
             int i = q.poll();  // i는 0의 수
 
-            // j는 0을 뒤집는 수
-            for (int j = Math.max(0, K - (A + B + i)); j < Math.min(i, K); j++) {
-                int nextzero = i + (K - 2 * j); // 다음 상태의 0의 수
-                if (array[nextzero] == -1) { // 처음 도착하는 곳이라면 다음 탐색에 추가합니다.
-                    if (nextzero == 0) return array[i] + 1;  // 답을 찾으면 이것을 리턴합니다.
-                    array[nextzero] = array[i] + 1;
-                    q.add(nextzero);
-                }
-            }
+            check(i, Math.max(0, K - (A + B - i)));  // 0을 최대한 증가시킵니다.
+            check(i, Math.min(i, K));  // 1을 최대한 증가시킵니다.
+            check(i, Math.min(Math.max((i + 1) / 2, K - ((A + B) - i)), K));  // K에 위부터 접근합니다.
+            check(i, Math.min(Math.max(i / 2, K - ((A + B) - i)), K));  // K에 아래부터 접근합니다.
         }
 
-        return -1;
+        return array[0];
+    }
+
+    private static void check(int nowzero, int usezero) {
+        // 가능한 0을 증가시킵니다. = 최대한 1을 많이 뒤집습니다.
+        int nextzero = nowzero + k - 2 * usezero;
+        if (array[nextzero] == -1) { // 처음 도착하는 곳이라면 다음 탐색에 추가합니다.
+            array[nextzero] = array[nowzero] + 1;
+            q.add(nextzero);
+        }
     }
 
     // 수학적인 풀이 방법
