@@ -1,5 +1,8 @@
 package Apr2024;
 
+/**
+ * Level 2. 3 * n 타일링
+ */
 public class N3Tiling {
     public static void main(String[] args) {
         System.out.println(solution(4));
