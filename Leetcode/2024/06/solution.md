@@ -15,4 +15,6 @@
 - 이 방법 대신 arr 배열의 크기만큼 다시 인덱스를 구해서 확인하면 더 시간을 줄일 수 있습니다.
 - 시간 복잡도: O(N) (N <= 2001)
 
-### ```EASY```
+### 2037. Minimum Number Of Moves To Seat Everyone ```EASY```
+- 
+- 시간 복잡도: O() ()
