@@ -145,6 +145,12 @@
 - 그렇기 않다면 왼쪽부터 비교해서 재귀를 돌고 그 다음 오른쪽 노드를 확인하여 재귀를 돈 뒤, 마지막으로 현재 노드의 값을 List에 넣은 뒤 최종적으로 반환하여 문제를 해결할 수 있습니다.
 - 시간 복잡도: O(n) (n <= 100)
 
+### 590. N-ary Tree Postorder Traversal ```EASY```
+- Node와 그 하위 노드들이 List로 주어졌을 때 post order 방식으로 읽어 값을 반환하는 문제
+- 145와 유사하게 현재 Node 가 null 인 경우 바로 return, 현재 node의 children이 null 인 경우 현재 node의 값만 저장한 뒤 바로 return
+- 현재 node의 children이 null 이 아닌 경우 for 문으로 반복하며 재귀 호출 후 마지막으로 현재 node의 값을 리스트에 저장한 뒤 반환하여 문제를 해결할 수 있습니다.
+- 시간 복잡도: O(n) (n <= 10000)
+
 ### ```EASY```
 
 
