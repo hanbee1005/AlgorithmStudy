@@ -51,6 +51,73 @@
 - 마지막으로 원본 문자열 앞에 최소한으로 필요한 문자를 붙여 문제를 해결할 수 있습니다.
 - 시간 복잡도: O(n) (n <= 5 * 10^4)
 
+### 2707. Extra Characters in a String ```MEDIUM```
+- 문자열 s와 여러 단어 목록 dictionary가 주어졌을 때 dictonary에 포함된 단어로 s를 나눠서 포함되지 않은 s의 최소 길이를 구하는 문제
+- 먼저 dictionary에 포함되는지를 확인하기 위해 Set으로 변경합니다.
+- 그리고 dp 배열을 만들어 dp[i]에는 부분 문자열 s[i:]에서 남은 최소한의 문자를 저장하도록 합니다.
+- dp 배열을 오른쪽에서부터 채우는데 기본적으로 이전에 남은 최소 문자 + 1을 저장합니다.
+- 문자를 하나씩 늘려가면서 사전 Set에 포함이 되어 있는지 확인하고 포함되어 있다면 현재 dp 배열 위치의 값과 끝 문자 위치에 저장된 dp 배열의 값 중 작은 값으로 변경합니다.
+- 이는 해당 문자로 나눈 이후에 남아 있는 가장 작은 단어를 나타내기 때문입니다.
+- 해당 문제는 Trie 알고리즘으로 더 효율적으로 해결할 수 있다고 합니다.
+- ```
+  class Node{
+      public Node[] child;
+      public boolean isEnd;
+      public Node(){
+          child = new Node[26];
+          isEnd = false;
+      }
+  }
+  
+  class Solution {
+
+      public int minExtraChar(String s, String[] dictionary) {
+          Node root = new Node();
+          for(String str: dictionary){
+              insert(str, root);
+          }
+          int n = s.length();
+          int[] dp = new int[n+1];
+          for(int i = 0; i < n+1; i++){
+              dp[i] = i;
+          }
+  
+          for(int i = 0; i < n; i++){
+              search(s, root, i, dp);
+              dp[i+1] = Math.min(dp[i+1], dp[i]+1);
+          }
+          return dp[n];
+      }
+
+      public void insert(String s, Node root){
+          for(int i = 0; i < s.length(); i++){
+              int path = s.charAt(i) - 'a';
+              if(root.child[path] == null){
+                  Node node = new Node();
+                  root.child[path] = node;
+              }
+              root = root.child[path];
+          }
+          root.isEnd = true;
+      }
+
+      public void search(String s, Node root, int idx, int[] dp){
+          for(int i = idx; i < s.length(); i++){
+              int path = s.charAt(i) - 'a';
+              if(root.child[path] != null){
+                  root = root.child[path];
+                  if(root.isEnd){
+                      dp[i+1] = Math.min(dp[i+1], dp[idx]);
+                  }
+              } else {
+                  return;
+              }
+          }
+      }
+  }
+  ```
+- 시간 복잡도: O(n^2) (n <= 50)
+
 ### ```EASY```
 
 
