@@ -68,7 +68,7 @@
           isEnd = false;
       }
   }
-  
+
   class Solution {
 
       public int minExtraChar(String s, String[] dictionary) {
@@ -117,6 +117,14 @@
   }
   ```
 - 시간 복잡도: O(n^2) (n <= 50)
+
+### 3043. Find the Length of the Longest Common Prefix ```MEDIUM```
+- 숫자 배열 2개가 주어졌을 때, 각 배열의 숫자를 쌍을 이뤄 두 수의 가장 긴 prefix 길이를 구하는 문제 (일치하는 prefix가 없는 경우 0 반환)
+- 먼저 arr1 배열에 있는 숫자를 모두 돌면서 10으로 나눠 몫을 Set 형태로 저장합니다.
+- arr2에 있는 숫자를 하나씩 돌며 set에 포함이 되어 있는 경우 해당 수의 길이를 log10(num) + 1 로 찾아 최대값을 구한 뒤 다음 수를 확인하고
+- 포함되어 있지 않은 경우는 10으로 나눠 몫을 계속 찾음으로써 prefix를 계속 비교하여 찾습니다.
+- 최종적으로 최대 prefix 길이인 answer를 반환하여 문제를 해결할 수 있습니다. 
+- 시간 복잡도: O(N * M) (N < 5 * 10^4, M < 10^8)
 
 ### ```EASY```
 
