@@ -53,6 +53,17 @@
 - 최종적으로 짝을 이루지 못한 여는 괄호의 수와 닫는 괄호의 수를 더해 반환하여 문제를 해결할 수 있습니다.
 - 시간 복잡도: O(n) (n <= 1000)
 
+### 962. Maximum Width Ramp ```MEDIUM```
+- 정수 배열이 주어졌을 때, i < j 이고 nums[i] <= nums[j] 일 때 j - i 의 최댓값을 구하는 문제
+- maxOnRight 배열은 주어진 배열 nums의 각 인덱스 i에 대해 오른쪽에 있는 값 중에서 가장 큰 값을 저장합니다.
+- 배열의 가장 마지막 값은 그대로 저장하고 배열의 뒤쪽에서부터 순차적으로 maxOnRight를 채웁니다. maxOnRight[i]는 nums[i]와 maxOnRight[i + 1] 중 더 큰 값을 저장하게 됩니다. 즉, i 이후의 최대값을 계속 추적합니다.
+- 그리고 left와 right라는 두 개의 포인터를 사용합니다.
+- right는 배열의 끝까지 순차적으로 이동하며, left는 right보다 작은 인덱스들 중에서 조건을 만족하는 최소한의 인덱스 위치를 찾습니다. 
+- nums[left] <= maxOnRight[right]일 때만 right - left의 값을 계산하여 최대 너비 maxRamp를 업데이트합니다.
+- 만약 nums[left] > maxOnRight[right]라면, left를 증가시키며 조건을 만족하는 left를 찾습니다. right는 매 반복마다 증가하며 전체 배열을 탐색합니다.
+- 이렇게 찾은 최대 maxRamp를 반환하여 문제를 해결할 수 있습니다.
+- 시간 복잡도: O(n) (n <= 5 * 10^4)
+
 ### ```EASY```
 
 
