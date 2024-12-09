@@ -23,5 +23,24 @@
 - 최종적으로 타겟 문자열의 인덱스와 타겟 문자열의 길이가 같은 경우는 타겟 문자열을 만들 수 있는 것으로 판단하여 true를 그렇지 않은 경우 false를 반환하여 문제를 해결할 수 있습니다.
 - 시간 복잡도: O(n) (n <= 10^5)
 
+### 3152. Special Array II ```MEDIUM```
+- 주어진 배열 nums와 다수의 쿼리 queries에 대해, 각 쿼리의 범위 [left, right]에서 "특별한 쌍(special pairs)"이 있는지 판단하는 문제
+  + 특별한 쌍의 정의: 배열의 두 인접 원소 (nums[i-1], nums[i])가 다음 조건 중 하나를 만족하면 특별한 쌍이라고 정의합니다.
+    - 두 원소가 모두 짝수이다.
+    - 두 원소가 모두 홀수이다.
+- 특별한 쌍의 누적 개수를 저장하는 prefix 배열을 생성합니다.
+  + prefix[i]는 배열의 처음부터 인덱스 i까지의 특별한 쌍의 개수를 나타냅니다.
+  + 이는 범위 [left, right]에서 특별한 쌍의 개수를 효율적으로 계산할 수 있도록 합니다.
+- 각 쿼리를 처리하며 prefix 배열을 활용해 범위 내 특별한 쌍의 개수를 계산하고, 조건에 따라 결과를 저장합니다.
+- Step 1: Build the prefix array
+  + prefix[i]를 0부터 i까지의 특별한 쌍의 누적 개수로 계산.
+  + 특별한 쌍은 조건에 따라 확인하고, 발견 시 prefix[i]를 증가.
+- Step 2: Process each query
+  + 각 쿼리에서 범위 [left, right]의 특별한 쌍의 개수를 계산:
+    - specialCount=prefix[right]−prefix[left-1] (left > 0일 경우).
+    - specialCount=prefix[right] (left = 0일 경우).
+  + 특별한 쌍이 하나도 없으면 결과는 true, 그렇지 않으면 false.
+- 시간 복잡도: O(n+q) (n <= 10^5, q <= 10^5)
+
 ### ```EASY```
 
