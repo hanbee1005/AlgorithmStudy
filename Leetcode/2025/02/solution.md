@@ -49,5 +49,12 @@
 - 이렇게 반복한 뒤 나온 문자열을 반환하여 문제를 해결할 수 있습니다.
 - 시간 복잡도: O(n) (n <= 100)
 
+### 1910. Remove All Occurrences of A Substring ```MEDIUM```
+- 문자열 s와 part가 주어졌을 때, s에서 part에 해당하는 부분을 모두 빼고 남은 문자를 반환하는 문제
+- 문자열 s를 StringBuilder로 변환한 뒤, 해당 문자열이 part를 포함하고 있는 경우(```sb.indexOf(part) != -1```) 반복하면서
+- part 문자열의 시작 위치를 찾아(```sb.indexOf(part)```) sb에서 part를 제거(```sb.delete(idx, idx + part.length())```) 합니다.
+- 이렇게 sb 내에 part가 없을 때까지 확인 후 남은 문자열을 반환하여 문제를 해결할 수 있습니다.
+- 시간 복잡도: O(n) (n <= 1000)
+
 ### ```EASY```
 
