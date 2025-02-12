@@ -56,7 +56,7 @@
 - 이렇게 sb 내에 part가 없을 때까지 확인 후 남은 문자열을 반환하여 문제를 해결할 수 있습니다.
 - 시간 복잡도: O(n) (n <= 1000)
 
-### 2342. Max Sum of a Pair With Equals Sum of Digits ```MEDIUM```
+### 2342. Max Sum of a Pair With Equal Sum of Digits ```MEDIUM```
 - 정수 배열이 주어졌을 때, 각 숫자의 자리수 합이 같은 숫자들 중에서 가장 큰 두 개의 합을 구하는 문제
 - max[100] 배열을 사용하여 자리수 합(digit sum)이 같은 숫자 중 최댓값을 저장.
   + max[i] → 자리수 합이 i인 숫자들 중 최댓값
