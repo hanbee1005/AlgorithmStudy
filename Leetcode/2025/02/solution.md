@@ -139,5 +139,30 @@
 - 위 방법을 통해 배열을 돌면서 sum을 구하고 그 값이 maxSum보다 크면 maxSum을 업데이트 minSum보다 작으면 minSum을 업데이트 하는 방식으로 maxSum과 minSum을 구하고 최종적으로 maxSum - minSum을 하여 문제를 해결할 수 있습니다.
 - 시간 복잡도: O(n) (n <= 100000)
 
+### 873. Length of Longest Fibonacci Subsequence ```MEDIUM```
+- 주어진 배열 arr에서 피보나치 부분 수열(Fibonacci-like subsequence)의 최장 길이를 찾는 문제
+- 우선 다음과 같은 변수를 초기화 합니다.
+  + `n` : 배열의 길이
+  + `dp[i][j]` : arr[i]와 arr[j]를 마지막 두 원소로 하는 피보나치 부분 수열의 길이
+  + `maxLen` : 찾은 피보나치 부분 수열의 최장 길이를 저장하는 변수
+- 그리고 curr = 2 부터 배열의 마지막 인덱스까지 반복하면서 두 수의 합이 arr[curr]이 되는 조합 찾습니다.
+  + `curr` : 현재 위치의 원소 (arr[curr])
+  + `start` : 배열의 맨 앞에서 시작하는 포인터
+  + `end` : curr-1 위치에서 시작하는 포인터
+  + 즉, arr[start] + arr[end] = arr[curr]을 만족하는지 확인
+- 투 포인터를 이용한 탐색을 진행합니다.
+  + 현재 두 수의 합이 arr[curr]보다 크다면 end를 줄여 작은 값을 탐색하고
+  + 현재 두 수의 합이 arr[curr]보다 작다면 start를 증가시켜 더 큰 값을 탐색합니다.
+  + 두 수의 합이 arr[curr]과 같으면 피보나치 부분 수열의 길이를 업데이트합니다.
+    - dp[end][curr] = dp[start][end] + 1
+    - 현재 arr[end]와 arr[curr]을 이용해 새로운 부분 수열을 만들기 때문에 기존 dp[start][end]의 길이에 1을 추가
+    - maxLen을 갱신
+- 그리고 최종 결과를 반환하여 문제를 해결할 수 있습니다.
+  + maxLen == 0이면 피보나치 부분 수열을 찾지 못했으므로 0 반환
+  + maxLen + 2
+    - dp[i][j]는 arr[i], arr[j] 이후의 길이만 저장하고 있음
+    - arr[i]와 arr[j]를 포함하려면 +2를 해야 함
+- 시간 복잡도: O(N^2) (N <= 1000)
+
 ### ```EASY```
 
