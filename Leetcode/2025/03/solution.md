@@ -44,5 +44,29 @@
 - 아니라면 다음 문자로 하나씩 미뤄서 위 과정을 거치고 최종적으로 최종 연산의 수를 반환하여 문제를 해결할 수 있습니다.
 - 시간 복잡도: O(n) (n <= 100)
 
+### 3306. Count of Substrings Containing Every Vowel and K Consonants II ```MEDIUM```
+- word에서 모든 모음이 최소 한개 이상 포함되고 k개의 자음을 포함한 substring의 개수를 구하는 문제
+- 변수 초기화
+  + frequencies[0] 배열: 각 문자가 모음인지(1) 아닌지(0)를 저장.
+  + frequencies[1] 배열: 현재 창(window) 내에서 등장한 모음의 개수를 저장.
+- 투 포인터를 사용한 윈도우 슬라이딩
+  + currentK: 현재 부분 문자열에서 포함된 자음의 개수.
+  + vowels: 현재 부분 문자열에서 포함된 모음의 개수.
+  + extraLeft: 중복된 모음이 존재할 때 왼쪽 포인터(left)를 추가로 이동할 때 사용.
+- 오른쪽 포인터(right) 이동하며 윈도우 확장
+  + right 포인터를 증가시키면서 새로운 문자를 창에 추가.
+  + 현재 문자가 모음이면 frequencies[1]을 업데이트하고, 처음 등장하는 경우 vowels++ 증가.
+  + 모음이 아닌 경우(자음) currentK++ 증가.
+- 왼쪽 포인터(left) 이동하여 윈도우 조정
+  + 현재 currentK > k이면 자음 개수를 k로 맞추기 위해 left를 증가시킴.
+  + left 문자가 모음이면, frequencies[1]을 감소시키고, 해당 모음이 사라지면 vowels--.
+  + left 문자가 자음이면, currentK--.
+- 추가적인 left 이동으로 중복 모음 정리
+  + 모든 모음이 포함(vowels == 5)되고 currentK == k이면 유효한 부분 문자열을 찾음.
+  + 추가적으로 left를 이동해 중복된 모음을 정리하고 extraLeft 증가.
+- 정답 업데이트
+  + 현재 조건을 만족하는 경우 (1 + extraLeft)를 answer에 추가.
+- 시간 복잡도: O(N) (N <= 2 * 10^5)
+
 ### ```EASY```
 
