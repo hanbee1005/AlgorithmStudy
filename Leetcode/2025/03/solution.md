@@ -123,14 +123,5 @@
   + t = sqrt(mid / i) 는 mid 시간 내에 rank i의 정비사가 수리할 수 있는 자동차 수를 나타냄
 - 시간 복잡도: O(M * logN) (M <= 10^5, N <= 10^6)
 
-### 2570. Merge Two 2D Arrays by Summing Values ```EASY```
-- {key, value}로 이루어진 2차원 배열이 2개 주어졌을 때 key가 같을 경우 value의 합을 구해 오름차순으로 두 배열을 병합한 배열을 구하는 문제
-- 먼저 2개의 포인터 i, j를 저장한 뒤, i가 nums1 배열의 길이보다 작고 j가 nums2 배열의 길이보다 작을 동안 반복하면서
-- nums1의 i번째 키와 nums2의 j번째 키가 같은 경우 두 value의 합을 더해 list에 저장하고 i, j 모두 1씩 증가시켜 다음으로 이동합니다.
-- 만약 nums1의 i번째 키가 nums2의 j번째 키보다 작은 경우는 nums1의 i번째 value만 list에 저장한 뒤 i만 1 증가시킵니다.
-- 그 반대라면 nums2의 j번째 value만 list에 저장한 뒤 j만 1 증가시킵니다.
-- 그런 다음 남는 쪽 배열을 다시 확인하면서 key, value를 list에 저장한 뒤 해당 list를 배열로 변환하여 반환하면 문제를 해결할 수 있습니다.
-- 시간 복잡도: O(N) (N <= 200)
-
 ### ```EASY```
 
