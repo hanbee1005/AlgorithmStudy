@@ -97,4 +97,9 @@
 - 1부터 n까지 돌면서 m으로 나누어지지 않는 수라면 num1에 합하고 나누어 떨어지면 num2에 더한 뒤 결과적으로 num1 - num2 를 반환하여 문제를 해결할 수 있습니다.
 - 시간 복잡도: O(n) (n <= 1000)
 
+### 1920. Build Array from Permutation ```EASY```
+- 정수 배열이 주어졌을 때, nums[nums[i]] 의 배열을 반환하는 문제
+- nums 길이의 배열 answer 을 만들고 nums 를 돌면서 nums[nums[i]]를 answer[i] 에 저장한 뒤 최종적으로 answer 을 반환하여 문제를 해결할 수 있습니다.
+- 시간 복잡도: O(n) (n <= 1000)
+
 ### ```EASY```
