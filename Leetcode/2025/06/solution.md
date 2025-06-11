@@ -29,4 +29,9 @@
 - 그리고 최댓값에서 최소값을 뺀 수를 반환하여 문제를 해결할 수 있습니다.
 - 시간 복잡도: O(n) (n <= 100)
 
+### 2176. Count Equal and Divisible Pairs in an Array ```EASY```
+- 배열과 k가 주어졌을 때, 0 <= i < j < nums.length 가 있고 nums[i] == nums[j] 이고 i * j % k가 짝수인 개수를 구하는 문제
+- 이중 for 문을 반복하면서 nums[i] == nums[j] 이고 i * j % k가 짝수이면 answer를 증가시키고 최종적으로 이 값을 반환하여 문제를 해결할 수 있습니다.
+- 시간 복잡도: O(n^2) (n <= 100)
+
 ### ```EASY```
