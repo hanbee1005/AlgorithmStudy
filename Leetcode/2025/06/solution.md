@@ -34,4 +34,11 @@
 - 이중 for 문을 반복하면서 nums[i] == nums[j] 이고 i * j % k가 짝수이면 answer를 증가시키고 최종적으로 이 값을 반환하여 문제를 해결할 수 있습니다.
 - 시간 복잡도: O(n^2) (n <= 100)
 
+### 3423. Maximum Difference Between Adjacent Elements in a Circular Array ```EASY```
+- 배열이 주어졌을 때 인접한 두 수의 차이의 가장 큰 절대값을 구하는 문제
+- 먼저 맨 마지막 값에서 처음 값을 뺀 절대값을 answer 에 담아두고
+- 배열을 돌면서 현재 인덱스의 값과 다음 인덱스의 값 차이와 answer 중 최대값을 answer 에 저장한 뒤
+- 최종적으로 answer을 반환하여 문제를 해결할 수 있습니다.
+- 시간 복잡도: O(n) (n <= 100)
+
 ### ```EASY```
