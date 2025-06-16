@@ -1,0 +1,29 @@
+package array;
+
+public class MaximumDifferenceBetweenIncreasingElements_2016 {
+    public static void main(String[] args) {
+        System.out.println(maximumDifference(new int[]{7,1,5,4}));
+        System.out.println(maximumDifference(new int[]{9,4,3,2}));
+        System.out.println(maximumDifference(new int[]{1,5,2,10}));
+    }
+
+    private static int maximumDifference(int[] nums) {
+        int i = 0;
+        int max = 0;
+
+        for (int j = 1; j < nums.length; j++) {
+            if (j > i && nums[j] > nums[i]) {
+                int tempMax = nums[j] - nums[i];
+                if (tempMax > max) {
+                    max = tempMax;
+                }
+            } else {
+                i = j;
+            }
+        }
+
+        if (max == 0) return -1;
+
+        return max;
+    }
+}
